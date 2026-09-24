@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{~ listingInfo.Name ~}}</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <main>
+    <header>
+      <img class="logo" src="favicon.svg" alt="" width="72" height="72">
+      <div>
+        <h1>{{~ listingInfo.Name ~}}</h1>
+        {{~ if listingInfo.Description; ~}}
+        <p>{{ listingInfo.Description }}</p>
+        {{~ end; ~}}
+        <p class="meta">Published by <a href="{{ listingInfo.Author.Url }}">{{ listingInfo.Author.Name }}</a></p>
+      </div>
+    </header>
+
+    <section class="add-repository" aria-labelledby="add-heading">
+      <h2 id="add-heading">Add this listing to VCC</h2>
+      <div class="url-row">
+        <code id="listing-url">{{ listingInfo.Url }}</code>
+        <button id="copy-url" type="button">Copy URL</button>
+        <a class="button primary" href="vcc://vpm/addRepo?url={{ listingInfo.Url }}">Add to VCC</a>
+      </div>
+    </section>
+
+    <section aria-labelledby="packages-heading">
+      <h2 id="packages-heading">Packages</h2>
+      <div class="packages">
+        {{~ for package in packages ~}}
+        <article>
+          <div>
+            <h3>{{ package.DisplayName }}</h3>
+            <p>{{ package.Description }}</p>
+            <code>{{ package.Name }}</code>
+          </div>
+          <div class="package-actions">
+            <span>v{{ package.Version }}</span>
+            <a class="button" href="{{ package.ZipUrl }}">Download ZIP</a>
+          </div>
+        </article>
+        {{~ end ~}}
+      </div>
+    </section>
+
+    {{~ if listingInfo.InfoLink.Url ~}}
+    <footer><a href="{{ listingInfo.InfoLink.Url }}">{{ listingInfo.InfoLink.Text }}</a></footer>
+    {{~ end; ~}}
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+:root {
+  color-scheme: light dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --accent: #7c5cff;
+  --surface: color-mix(in srgb, Canvas 94%, var(--accent));
+  --border: color-mix(in srgb, CanvasText 18%, transparent);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, color-mix(in srgb, var(--accent) 18%, Canvas), Canvas 48rem);
+  color: CanvasText;
+}
+
+main {
+  width: min(920px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 4rem 0 2rem;
+}
+
+header,
+.url-row,
+article,
+.package-actions {
+  display: flex;
+  align-items: center;
+}
+
+header {
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.logo {
+  border-radius: 18px;
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: .35rem;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+}
+
+.meta,
+article p,
+article code {
+  opacity: .72;
+}
+
+section {
+  margin: 1.5rem 0;
+}
+
+.add-repository,
+article {
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+}
+
+.url-row {
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+.url-row code {
+  flex: 1 1 360px;
+  padding: .8rem 1rem;
+  overflow-wrap: anywhere;
+  border-radius: 10px;
+  background: color-mix(in srgb, CanvasText 8%, transparent);
+}
+
+button,
+.button {
+  padding: .75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: Canvas;
+  color: CanvasText;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: white;
+}
+
+.packages {
+  display: grid;
+  gap: .8rem;
+}
+
+article {
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+article h3 {
+  margin-bottom: .35rem;
+}
+
+article p {
+  margin-bottom: .6rem;
+}
+
+.package-actions {
+  gap: .75rem;
+  white-space: nowrap;
+}
+
+footer {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+a {
+  color: color-mix(in srgb, var(--accent) 82%, CanvasText);
+}
+
+@media (max-width: 640px) {
+  main {
+    padding-top: 2rem;
+  }
+
+  article,
+  .package-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
