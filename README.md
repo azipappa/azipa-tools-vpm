@@ -7,6 +7,9 @@
 - Mesh Material Combiner
   - Package ID: `com.azipaworks.mesh-material-combiner`
   - Repository: [azipappa/MeshMaterialCombiner](https://github.com/azipappa/MeshMaterialCombiner)
+- Auto Save
+  - Package ID: `com.azipaworks.auto-save`
+  - Repository: [azipappa/Auto-Save](https://github.com/azipappa/Auto-Save)
 
 ## VCCへの登録
 
@@ -24,20 +27,20 @@ GitHub上で次の設定を一度だけ手動で行ってください。追加�
 
 1. このリポジトリの `Settings` > `Pages` を開く。
 2. `Build and deployment` の `Source` を **GitHub Actions** に設定する。
-3. `Actions` タブで `Build Repo Listing` を手動実行するか、`source.json` を変更して`main`ブランチへPushする。
+3. `Actions` タブで `Build Repo Listing` を手動実行するか、`source.json` を変更して既定ブランチへPushする。
 
 初回デプロイ完了後、上記のListing URLで`index.json`が取得できることを確認してください。
 
 ## Listingの更新
 
-`source.json`が`main`ブランチへPushされると、GitHub Actionsが各GitHub RepositoryのRelease情報を取得し、`Website/index.json`を生成してGitHub Pagesへデプロイします。必要に応じて`Build Repo Listing` workflowを手動実行することもできます。
+`source.json`が既定ブランチへPushされると、GitHub Actionsが各GitHub RepositoryのRelease情報を取得し、`Website/index.json`を生成してGitHub Pagesへデプロイします。必要に応じて`Build Repo Listing` workflowを手動実行することもできます。
 
 新しいパッケージを追加する場合は、`source.json`の`githubRepos`へ次の形式でリポジトリを追加してください。
 
 ```json
 "githubRepos": [
   "azipappa/MeshMaterialCombiner",
-  "owner/repository"
+  "azipappa/Auto-Save"
 ]
 ```
 

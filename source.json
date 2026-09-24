@@ -13,7 +13,8 @@
     "text": "View on GitHub"
   },
   "githubRepos": [
-    "azipappa/MeshMaterialCombiner"
+    "azipappa/MeshMaterialCombiner",
+    "azipappa/Auto-Save"
   ],
   "packages": []
 }
