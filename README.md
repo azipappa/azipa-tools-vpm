@@ -10,6 +10,9 @@
 - Auto Save
   - Package ID: `com.azipaworks.auto-save`
   - Repository: [azipappa/Auto-Save](https://github.com/azipappa/Auto-Save)
+- Blendshape Editor
+  - Package ID: `com.azipaworks.blendshape-editor`
+  - Repository: [azipappa/BlendshapeEditor](https://github.com/azipappa/BlendshapeEditor)
 
 ## VCCへの登録
 
@@ -40,7 +43,8 @@ GitHub上で次の設定を一度だけ手動で行ってください。追加�
 ```json
 "githubRepos": [
   "azipappa/MeshMaterialCombiner",
-  "azipappa/Auto-Save"
+  "azipappa/Auto-Save",
+  "azipappa/BlendshapeEditor"
 ]
 ```
 

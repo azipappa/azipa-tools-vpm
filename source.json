@@ -14,7 +14,8 @@
   },
   "githubRepos": [
     "azipappa/MeshMaterialCombiner",
-    "azipappa/Auto-Save"
+    "azipappa/Auto-Save",
+    "azipappa/BlendshapeEditor"
   ],
   "packages": []
 }
