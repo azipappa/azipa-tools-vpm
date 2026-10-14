@@ -16,7 +16,8 @@
     "azipappa/MeshMaterialCombiner",
     "azipappa/Auto-Save",
     "azipappa/BlendshapeEditor",
-    "azipappa/DistanceFadeController"
+    "azipappa/DistanceFadeController",
+    "azipappa/AvaBuildInspector"
   ],
   "packages": []
 }
