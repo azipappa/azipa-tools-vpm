@@ -10,6 +10,8 @@ on:
       - master
     paths:
       - source.json
+      - .github/workflows/build-listing.yml
+      - .github/scripts/**
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -49,6 +51,10 @@ jobs:
             ~/.nuget/packages
           key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj') }}
 
+      - name: Wait for repositories with unpublished releases
+        run: python3 .github/scripts/filter_unreleased.py --source source.json
+        env:
+          GH_TOKEN: ${{ github.token }}
       - name: Build Package Version Listing
         run: ${{ env.pathToCi }}/build.cmd BuildMultiPackageListing --root ${{ env.pathToCi }} --list-publish-directory $GITHUB_WORKSPACE/${{ env.listPublishDirectory }}
         env:

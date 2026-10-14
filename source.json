@@ -15,7 +15,8 @@
   "githubRepos": [
     "azipappa/MeshMaterialCombiner",
     "azipappa/Auto-Save",
-    "azipappa/BlendshapeEditor"
+    "azipappa/BlendshapeEditor",
+    "azipappa/DistanceFadeController"
   ],
   "packages": []
 }
